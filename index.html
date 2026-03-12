@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zeyn | SA-MP Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Share Tech Mono', monospace;
+}
+
+body{
+background:url("https://i.imgur.com/yaZqhkO.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:#ffffff;
+line-height:1.7;
+}
+
+/* overlay */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+z-index:-1;
+}
+
+/* container */
+
+.container{
+max-width:850px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* header */
+
+.header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.profile{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #ffffff;
+box-shadow:0 0 20px #ffffff;
+margin-bottom:15px;
+}
+
+h1{
+font-size:45px;
+text-shadow:
+0 0 5px #ffffff,
+0 0 10px #ffffff,
+0 0 20px #ffffff;
+}
+
+.header p{
+color:#dddddd;
+}
+
+/* card */
+
+.section{
+background:rgba(0,0,0,0.7);
+border:1px solid #ffffff;
+box-shadow:0 0 10px rgba(255,255,255,0.2);
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.section h2{
+margin-bottom:15px;
+text-shadow:0 0 10px #ffffff;
+}
+
+/* skill */
+
+.skill{
+margin-bottom:10px;
+}
+
+/* button */
+
+.wa{
+display:inline-block;
+margin-top:15px;
+padding:12px 22px;
+background:#ffffff;
+color:black;
+text-decoration:none;
+border-radius:6px;
+box-shadow:0 0 10px #ffffff;
+}
+
+/* footer */
+
+footer{
+text-align:center;
+margin-top:40px;
+color:#cccccc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<div class="container">
+
+<div class="header">
+
+<img src="https://i.imgur.com/im1gnFd.png" class="profile">
+
+<h1>Zeyn</h1>
+<p>Zeyn Developer Samp</p>
+
+</div>
+
+<div class="section">
+
+<h2>Skill</h2>
+
+<p class="skill">- Memperbaiki bug pada script server SA-MP agar sistem berjalan stabil tanpa runtime error.</p>
+
+<p class="skill">- Mengembangkan fitur baru pada gamemode server menggunakan bahasa Pawn.</p>
+
+<p class="skill">- Mendesain UI server menggunakan TextDraw agar terlihat modern.</p>
+
+<p class="skill">- Mengoptimasi performa server agar tetap stabil saat banyak player.</p>
+
+<p class="skill">- Membuat berbagai sistem gameplay seperti inventory dan job system.</p>
+
+<p class="skill">- Memperbaiki error pada sistem database MySQL server.</p>
+
+<p class="skill">- Mengembangkan berbagai fitur custom sesuai konsep server.</p>
+
+<p class="skill">- Membuat interface TextDraw seperti menu system dan HUD.</p>
+
+<p class="skill">- Melakukan debugging script Pawn untuk menemukan bug.</p>
+
+<p class="skill">- Menambahkan fitur gameplay baru untuk meningkatkan pengalaman bermain.</p>
+
+</div>
+
+<div class="section">
+
+<h2>Kontak</h2>
+
+<p>Hubungi saya melalui WhatsApp jika ingin membuat fitur atau memperbaiki server SA-MP.</p>
+
+<a class="wa" href="https://wa.me/6289516125553">
+Hubungi WhatsApp
+</a>
+
+</div>
+
+<footer>
+© 2026 Zeyn Developer
+</footer>
+
+</div>
+
+<script>
+
+/* scroll animation */
+
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", ()=>{
+
+sections.forEach(sec=>{
+
+const top = window.scrollY;
+const offset = sec.offsetTop - 500;
+
+if(top > offset){
+sec.classList.add("show");
+}
+
+});
+
+});
+
+/* cursor glow */
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e=>{
+cursor.style.top = e.clientY + "px";
+cursor.style.left = e.clientX + "px";
+});
+
+</script>
+
+</body>
+</html>
